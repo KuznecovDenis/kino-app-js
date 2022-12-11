@@ -7,7 +7,7 @@
 
 :root {
   --main-dark: #0c0328;
-  --main-lightn: #f5f5f5;
+  --main-light: #f5f5f5;
   --accent-light: #f44f85; 
   --accent-dark: #7c59dd;
 }
@@ -26,14 +26,26 @@
   display: grid;
   grid-template-rows: min-content 1fr min-content;
   background-color: var(--main-dark);
-  color: var(--main-lightn);
+  color: var(--main-light);
+  transition: background-color 0.235s ease-in-out, color 0.235s ease-in-out;
+}
+
+.body.theme_light {
+  background-color: var(--main-light);
+  color: var(--main-main);
 }
 
 /* HEADER-CONTENT */
 
 .header {
   background-color: var(--main-dark);
-  color: var(--main-lightn);
+  color: var(--main-light);
+  transition: background-color 0.235s ease-in-out, color 0.235s ease-in-out;
+}
+
+.theme_light .header {
+  background-color: var(--main-light);
+  color: var(--main-dark);
 }
 
 .header-container {
@@ -68,29 +80,17 @@
   height: 25px;
   border-radius: 50%;
   border: none;
-}
-
-.theme-btn_light,
-.theme-btn_dark {
   background-image: url(../img/light.svg);
   background-repeat: no-repeat;
   background-size: 15px;
   background-position: center;
-  background-color: var(--main-lightn);
+  background-color: var(--main-light);
+  transition: background-color 0.235s ease-in-out, color 0.235s ease-in-out;
 }
 
-.theme-btn_dark {
-  background-image: url(../img/dark.svg);
-}
-
-.theme-btn_dark.active {
+.theme-btn.active {
   background-image: url(../img/dark-white.svg);
-  background-color: var(--accent-dark);
-}
-
-.theme-btn_light.active {
-  background-image: url(../img/light-white.svg);
-  background-color: var(--accent-dark);
+  background-color: var(--accent-light);
 }
 
 /* SEARCH-CONTENT */
@@ -100,13 +100,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  color: var(--main-lightn);
+  color: var(--main-light);
   position: relative;
   z-index: 1;
   margin-bottom: 60px;
 }
 
-.search:before {
+.search::before {
   content: "";
   position: absolute;
   left: 0;
@@ -115,6 +115,11 @@
   width: 100%;
   background: linear-gradient(to bottom, rgba(221, 2, 199, 0.1), rgba(37, 1, 92, 0.7));
   z-index: -1;
+}
+
+.theme_light .search::before {
+  background: linear-gradient(to bottom, rgba(39, 11, 37, 0.1), rgba(255, 3, 196, 0.5));
+  transition: background-color 0.235s ease-in-out, color 0.235s ease-in-out;
 }
 
 .search-container {
@@ -135,17 +140,22 @@
   justify-content: space-between;
   width: 100%;
   margin: 0 auto;
-  background-color: var(--main-lightn);
+  background-color: var(--main-light);
   border-radius: 20px;
   box-shadow: 0px 5px 50px 0 rgba(251, 243, 250, 0.4);
 }
 
+.theme_light .search-area {
+  box-shadow: 0px 5px 50px 0 rgba(19, 1, 31, 0.7);
+  transition: box-shadow 0.235s ease-in-out;
+}
+
 .search-input {
-  background-color: var(--main-lightn);
+  background-color: var(--main-light);
   border: none;
   width: calc(100% - 40px - 2px);
   height: 40px;
-  padding: 10px;
+  padding: 10px 20px;
   font-size: 18px;
   font-weight: 600;
   color: var(--main-dark);
@@ -162,7 +172,7 @@
   width: 40px;
   height: 40px;
   border: none;
-  background-color: var(--main-lightn);
+  background-color: var(--main-light);
   background-image: url(../img/search.svg);
   background-size: 42% ;
   background-position: center;
@@ -171,9 +181,10 @@
   border-radius: 2px 20px 20px 2px;
 }
 
-.search-button:focus {
+.search-button:focus-visible {
   outline: 2px solid var(--accent-light);
 }
+
 
 /* MOVIES-CONTENT */
 
@@ -190,8 +201,13 @@
   max-width: 340px;
   border-radius: 10px;
   margin-bottom: 40px;
-  background-color: var(--main-lightn);
+  background-color: var(--main-light);
   position: relative;
+  transition: background-color 0.235s ease-in-out;
+}
+
+.theme_light .movie-info {
+  background-color: var(--main-dark);
 }
 
 .movie-image {
@@ -203,6 +219,11 @@
 .movie-description {
   padding: 10px;
   color: var(--main-dark);
+  transition: color 0.235s ease-in-out;
+}
+
+.theme_light .movie-description {
+  color: var(--main-light);
 }
 
 .movie-title {
@@ -232,7 +253,7 @@
   width: 50px;
   height: 50px;
   background-color: rgba(0,  0, 0, 0.6);
-  color: var(--main-lightn);
+  color: var(--main-light);
   border-radius: 25px;
   display: flex;
   align-items: center;
@@ -263,7 +284,15 @@
   padding: 40px 0;
 }
 
-.footer a:hover {
+.github-svg path{
+  fill: var(--main-light)
+}
+
+.theme_light .github-svg path{
+  fill: var(--main-dark)
+}
+
+.github-svg:hover {
   opacity: 0.5;
 }
 
