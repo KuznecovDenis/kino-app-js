@@ -29,6 +29,8 @@
   color: var(--main-lightn);
 }
 
+/* HEADER-CONTENT */
+
 .header {
   background-color: var(--main-dark);
   color: var(--main-lightn);
@@ -91,6 +93,8 @@
   background-color: var(--accent-dark);
 }
 
+/* SEARCH-CONTENT */
+
 .search {
   background: url(../img/bg-searh.jpg);
   background-repeat: no-repeat;
@@ -99,7 +103,7 @@
   color: var(--main-lightn);
   position: relative;
   z-index: 1;
-  
+  margin-bottom: 60px;
 }
 
 .search:before {
@@ -169,4 +173,102 @@
 
 .search-button:focus {
   outline: 2px solid var(--accent-light);
+}
+
+/* MOVIES-CONTENT */
+
+.movieContent {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.movie-info {
+  min-width: 280px;
+  width: 100%;
+  max-width: 340px;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  background-color: var(--main-lightn);
+  position: relative;
+}
+
+.movie-image {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+.movie-description {
+  padding: 10px;
+  color: var(--main-dark);
+}
+
+.movie-title {
+  color: var(--accent-light);
+  font-size: 1.3rem;
+  font-weight: 700;
+  padding-top: 7px;
+  line-height: 100%;
+}
+
+.movie-year {
+  opacity: 0.6;
+  font-size: 1rem;
+  line-height: 100%;
+  font-weight: 700;
+}
+
+.movie-genre {
+  font-size: 0.9rem;
+  padding-bottom: 10px;
+}
+
+.movie-reiting {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0,  0, 0, 0.6);
+  color: var(--main-lightn);
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.2rem;
+  outline: 4px solid var(--accent-light);
+  outline-offset: -2px;
+}
+
+.movie-reiting_green {
+  outline-color: #18b222;
+}
+
+.movie-reiting_red {
+  outline-color: #c50909;
+}
+
+.movie-reiting_yellow {
+  outline-color: #f0bf0b;
+}
+
+
+/* FOOTER  */
+
+.footer {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.footer a:hover {
+  opacity: 0.5;
+}
+
+.footer-text {
+  font-size: 14px;
+  max-width: 800px;
+  margin: 0 auto;
 }
