@@ -93,6 +93,15 @@
   background-color: var(--accent-light);
 }
 
+.theme-btn:focus-visible {
+  outline: none;
+  border: 2px solid var(--accent-light);
+}
+
+.theme_light .theme-btn:focus-visible {
+  border-color: var(--main-dark);
+}
+
 /* SEARCH-CONTENT */
 
 .search {
@@ -165,7 +174,8 @@
 }
 
 .search-input:focus {
-  outline: 2px solid var(--accent-light);
+  border: 2px solid var(--accent-light);
+  outline: none;
 }
 
 .search-button {
@@ -182,7 +192,8 @@
 }
 
 .search-button:focus-visible {
-  outline: 2px solid var(--accent-light);
+  border: 2px solid var(--accent-light);
+  outline: none;
 }
 
 
@@ -250,8 +261,8 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 50px;
-  height: 50px;
+  width: 46px;
+  height: 46px;
   background-color: rgba(0,  0, 0, 0.6);
   color: var(--main-light);
   border-radius: 25px;
@@ -260,20 +271,19 @@
   justify-content: center;
   font-weight: 700;
   font-size: 1.2rem;
-  outline: 4px solid var(--accent-light);
-  outline-offset: -2px;
+  border: 4px solid var(--accent-light);
 }
 
 .movie-reiting_green {
-  outline-color: #18b222;
+  border-color: #18b222;
 }
 
 .movie-reiting_red {
-  outline-color: #c50909;
+  border-color: #c50909;
 }
 
 .movie-reiting_yellow {
-  outline-color: #f0bf0b;
+  border-color: #f0bf0b;
 }
 
 
